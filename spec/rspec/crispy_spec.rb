@@ -28,11 +28,20 @@ RSpec.describe ::RSpec::Crispy do
   describe '#stub_const' do
 
     context 'when stubs' do
-      before { stub_const 'SomeClass::SOME_CONSTANT', 'stubbed' }
+      before do
+        spy_into(::Crispy::CrispyInternal::ConstChanger)
+
+        stub_const 'SomeClass::SOME_CONSTANT', 'stubbed'
+      end
 
       it 'mutates the value of constant' do
         expect(SomeClass::SOME_CONSTANT).to eq 'stubbed'
       end
+
+      it 'calls ::Crispy::CrispyInternal::ConstChanger.change_by_full_name' do
+        expect(spy(::Crispy::CrispyInternal::ConstChanger).received?(:change_by_full_name, 'SomeClass::SOME_CONSTANT', 'stubbed')).to be true
+      end
+
     end
 
     context 'when not stubs' do
