@@ -5,12 +5,12 @@ require 'rspec/crispy/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "rspec-crispy"
-  spec.version       = Rspec::Crispy::VERSION
+  spec.version       = RSpec::Crispy::VERSION
   spec.authors       = ["Yamamoto Yuji"]
   spec.email         = ["whosekiteneverfly@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{RSpec plugin for Crispy you can use with rspec-mocks.}
+  spec.description   = %q{RSpec plugin for Crispy you can use with rspec-mocks. Privides matchers such as have_received to use Crispy's API in RSpec's way.}
+  spec.homepage      = "https://github.com/igrep/rspec-crispy"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
