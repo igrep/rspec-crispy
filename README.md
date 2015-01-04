@@ -1,4 +1,4 @@
-# Rspec::Crispy
+# RSpec::Crispy
 
 TODO: Write a gem description
 
