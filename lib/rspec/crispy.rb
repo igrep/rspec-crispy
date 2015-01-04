@@ -11,5 +11,9 @@ module RSpec
       :crispy
     end
 
+    def self.configure_without_conflict config
+      config.after(:each){ ::Crispy::CrispyWorld.reset }
+    end
+
   end
 end
