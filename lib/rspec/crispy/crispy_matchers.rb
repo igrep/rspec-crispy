@@ -2,7 +2,7 @@ require 'crispy'
 
 module RSpec
   module Crispy
-    module RSpecCrispyMatchers
+    module CrispyMatchers
 
       def have_received method_name, *args, &block
       end

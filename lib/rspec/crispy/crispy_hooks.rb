@@ -2,7 +2,7 @@ require 'crispy'
 
 module RSpec
   module Crispy
-    module RSpecCrispyHooks
+    module CrispyHooks
 
       # required methods by RSpec's mock framework adapter API.
 
