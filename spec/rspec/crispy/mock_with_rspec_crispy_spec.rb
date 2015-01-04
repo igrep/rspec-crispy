@@ -2,7 +2,6 @@ require 'rspec/crispy'
 
 RSpec.configure do|config|
   config.mock_with ::RSpec::Crispy
-  config.include ::Crispy
 end
 
 class SomeClass

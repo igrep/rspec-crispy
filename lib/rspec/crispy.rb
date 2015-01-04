@@ -4,6 +4,7 @@ require 'rspec/crispy/version'
 
 module RSpec
   module Crispy
+    include ::Crispy
     include ::RSpec::Crispy::CrispyHooks
     include ::RSpec::Crispy::CrispyMatchers
 
