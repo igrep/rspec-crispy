@@ -1,6 +1,6 @@
 # RSpec::Crispy
 
-TODO: Write a gem description
+Custom matchers for RSpec to call [Crispy](https://github.com/igrep/crispy)'s API.
 
 ## Installation
 
