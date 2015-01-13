@@ -1,12 +1,11 @@
 require 'rspec/crispy/crispy_hooks'
-require 'rspec/crispy/crispy_matchers'
+require 'rspec/crispy/crispy_features'
 require 'rspec/crispy/version'
 
 module RSpec
   module Crispy
-    include ::Crispy
     include ::RSpec::Crispy::CrispyHooks
-    include ::RSpec::Crispy::CrispyMatchers
+    include ::RSpec::Crispy::CrispyFeatures
 
     def self.framework_name
       :crispy
