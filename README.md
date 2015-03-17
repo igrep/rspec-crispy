@@ -29,3 +29,8 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+### NOTE
+
+- You must use `rake test` to run `rspec spec/rspec/crispy/configure_without_conflict_spec.rb` and `rspec spec/rspec/crispy/mock_with_rspec_crispy_spec.rb` separately. Do NOT run all specs at once by `rspec spec`.  
+- Set `1` to `USE_CRISPY_IN_THIS_REPOSITORY` environment variable if you want to test rspec-crispy with the crispy in this repository instead of the crispy released on rubygems.org.
