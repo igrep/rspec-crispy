@@ -24,6 +24,16 @@ Or install it yourself as:
 
 ## Usage
 
+### Use with rspec-mocks
+
+TODO: Write usage instructions here
+
+### Use only rspec-crispy (without rspec-mocks)
+
+TODO: Write usage instructions here
+
+### Available Crispy API
+
 TODO: Write usage instructions here
 
 ## Contributing
