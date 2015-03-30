@@ -1,5 +1,9 @@
 # RSpec::Crispy
 
+[![Build Status](https://travis-ci.org/igrep/rspec-crispy.svg?branch=master)](https://travis-ci.org/igrep/rspec-crispy)
+[![Test Coverage](https://codeclimate.com/github/igrep/rspec-crispy/badges/coverage.svg)](https://codeclimate.com/github/igrep/rspec-crispy)
+[![Code Climate](https://codeclimate.com/github/igrep/rspec-crispy/badges/gpa.svg)](https://codeclimate.com/github/igrep/rspec-crispy)
+
 Custom matchers for RSpec to call [Crispy](https://github.com/igrep/crispy)'s API.
 
 ## Installation
