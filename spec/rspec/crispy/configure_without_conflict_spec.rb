@@ -102,7 +102,7 @@ RSpec.describe ::RSpec::Crispy do
       end
 
       it 'it produces failure_message' do
-        # The received message should be checked by your own eyes. Is it easy to read?
+        # The failure message should be checked by your own eyes. Is it easy to read?
         puts subject.failure_message
       end
     end
