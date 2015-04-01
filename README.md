@@ -26,7 +26,42 @@ Or install it yourself as:
 
 ### Use with rspec-mocks
 
-TODO: Write usage instructions here
+Add `::RSpec::Crispy.configure_without_conflict config` in your `spec_helper.rb`.
+
+```ruby
+RSpec.configure do|config|
+  config.mock_with(:rspec)
+  ::RSpec::Crispy.configure_without_conflict config
+end
+```
+
+Then, `include ::RSpec::Crispy::CrispyFeatures` in a context where you want to use the features.
+
+```ruby
+RSpec.describe YourClass do
+
+  subject { YourClass }
+
+  context 'use crispy' do
+    include ::RSpec::Crispy::CrispyFeatures
+
+    before do
+      spy_into subject
+      subject.new.hoge
+    end
+
+    it { is_expected.to have_received(:foo) }
+  end
+
+  context 'use rspec-mocks' do
+    it 'calls foo' do
+      expect(subject).to have_receive(:foo)
+      subject.new.hoge
+    end
+  end
+
+end
+```
 
 ### Use only rspec-crispy (without rspec-mocks)
 
