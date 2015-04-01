@@ -8,8 +8,8 @@ rvm:
   - 2.1.5
   - 2.0.0
 script:
-  - bundle exec rspec spec/rspec/crispy/mock_with_rspec_crispy_spec.rb
   - CODECLIMATE_REPO_TOKEN=0f952da7b3b1345e9c0ad6e4b2a4dfa4479f3788efd933fb0598edecf429ed51 bundle exec rspec spec/rspec/crispy/configure_without_conflict_spec.rb
+  - bundle exec rspec spec/rspec/crispy/mock_with_rspec_crispy_spec.rb
 notifications:
   email:
     recipients:
