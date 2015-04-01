@@ -81,4 +81,4 @@ TODO: Write usage instructions here
 
 ### NOTE
 
-- You must use `rake test` to run `rspec spec/rspec/crispy/configure_without_conflict_spec.rb` and `rspec spec/rspec/crispy/mock_with_rspec_crispy_spec.rb` separately. Do NOT run all specs at once by `rspec spec`.  
+- You must use **`rake test`** to run `rspec spec/rspec/crispy/configure_without_conflict_spec.rb` and `rspec spec/rspec/crispy/mock_with_rspec_crispy_spec.rb` separately. **DO NOT** run all specs at once by `rspec spec`.
