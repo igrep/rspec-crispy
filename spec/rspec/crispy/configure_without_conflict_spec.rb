@@ -85,6 +85,17 @@ RSpec.describe ::RSpec::Crispy do
       end
     end
 
+    shared_examples_for 'matches and then produces failure_message_when_negated' do
+      it 'matches' do
+        expect(result).to be true
+      end
+
+      it 'it produces failure_message_when_negated' do
+        # The failure message should be checked by your own eyes. Is it easy to read?
+        puts subject.failure_message_when_negated
+      end
+    end
+
     shared_examples_for 'doesn\'match and then produces failure_message' do
       it 'doesn\'t match' do
         expect(result).to be false
