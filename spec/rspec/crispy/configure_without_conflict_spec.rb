@@ -118,6 +118,7 @@ RSpec.describe ::RSpec::Crispy do
       end
 
       subject { have_received(method_name, *arguments) }
+      let!(:result){ subject.matches? ObjectClass }
 
       context 'without arguments' do
         let(:arguments){ [] }
@@ -125,7 +126,7 @@ RSpec.describe ::RSpec::Crispy do
         context 'given a method ObjectClass actually called' do
           let(:method_name){ :hoge }
 
-          it { is_expected.to be_matches(ObjectClass) }
+          it_should_behave_like 'matches and then produces failure_message_when_negated'
 
           context 'given an object spy_into-ed but not used as matches?\'s argument' do
             let!(:result){ subject.matches? non_used_object }
@@ -142,7 +143,6 @@ RSpec.describe ::RSpec::Crispy do
 
         context 'given a method ObjectClass didn\'t call' do
           let(:method_name){ :never_called }
-          let!(:result){ subject.matches? ObjectClass }
 
           it_should_behave_like 'doesn\'match and then produces failure_message'
 
@@ -162,13 +162,12 @@ RSpec.describe ::RSpec::Crispy do
           let(:method_name){ :hoge }
           let(:arguments){ [1, 1, 1] }
 
-          it { is_expected.to be_matches(ObjectClass) }
+          it_should_behave_like 'matches and then produces failure_message_when_negated'
         end
 
         context 'given a method ObjectClass actually called, and not received arguments' do
           let(:method_name){ :hoge }
           let(:arguments){ [3, 3, 3] }
-          let!(:result){ subject.matches? ObjectClass }
 
           it_should_behave_like 'doesn\'match and then produces failure_message'
         end
@@ -190,6 +189,7 @@ RSpec.describe ::RSpec::Crispy do
       end
 
       subject { have_received(method_name, *arguments).once }
+      let!(:result){ subject.matches? ObjectClass }
 
       context 'without arguments' do
         let(:arguments){ [] }
@@ -197,19 +197,17 @@ RSpec.describe ::RSpec::Crispy do
         context 'given a method ObjectClass actually called once' do
           let(:method_name){ :foo }
 
-          it { is_expected.to be_matches(ObjectClass) }
+          it_should_behave_like 'matches and then produces failure_message_when_negated'
         end
 
         context 'given a method ObjectClass actually called more than once' do
           let(:method_name){ :hoge }
-          let!(:result){ subject.matches? ObjectClass }
 
           it_should_behave_like 'doesn\'match and then produces failure_message'
         end
 
         context 'given a method ObjectClass didn\'t call' do
           let(:method_name){ :never_called }
-          let!(:result){ subject.matches? ObjectClass }
 
           it_should_behave_like 'doesn\'match and then produces failure_message'
         end
@@ -222,13 +220,12 @@ RSpec.describe ::RSpec::Crispy do
           let(:method_name){ :hoge }
           let(:arguments){ [1, 1, 1] }
 
-          it { is_expected.to be_matches(ObjectClass) }
+          it_should_behave_like 'matches and then produces failure_message_when_negated'
         end
 
         context 'given a method ObjectClass\'s instances actually called once, but given arguments received twice' do
           let(:method_name){ :hoge }
           let(:arguments){ [2, 2, 2] }
-          let!(:result){ subject.matches? ObjectClass }
 
           it_should_behave_like 'doesn\'match and then produces failure_message'
         end
@@ -253,6 +250,7 @@ RSpec.describe ::RSpec::Crispy do
 
       describe '.have_received' do
         subject { have_received(method_name, *arguments) }
+        let!(:result){ subject.matches? subject_of_matcher }
 
         context 'without arguments' do
           let(:arguments){ [] }
@@ -260,7 +258,7 @@ RSpec.describe ::RSpec::Crispy do
           context 'given a method ObjectClass\'s instances actually called' do
             let(:method_name){ :instance_hoge }
 
-            it { is_expected.to be_matches(subject_of_matcher) }
+            it_should_behave_like 'matches and then produces failure_message_when_negated'
           end
 
           context 'given a method none of the ObjectClass\'s instances called' do
