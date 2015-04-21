@@ -54,7 +54,7 @@ RSpec.describe YourClass do
   end
 
   context 'use rspec-mocks' do
-    subject { spy("rspec's spy') }
+    subject { spy("rspec's spy") }
 
     before { some_object.some_method(spy) }
 
