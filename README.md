@@ -50,6 +50,7 @@ RSpec.describe YourClass do
       subject.new.hoge
     end
 
+    it { is_expected.to have_received(:foo) }
   end
 
   context 'use rspec-mocks' do
