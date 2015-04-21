@@ -54,9 +54,12 @@ RSpec.describe YourClass do
   end
 
   context 'use rspec-mocks' do
+    subject { spy("rspec's spy') }
+
+    before { some_object.some_method(spy) }
+
     it 'calls foo' do
-      expect(subject).to have_receive(:foo)
-      subject.new.hoge
+      expect(subject).to have_received(:foo)
     end
   end
 
